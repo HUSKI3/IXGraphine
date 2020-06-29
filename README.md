@@ -24,7 +24,11 @@ $ spark install ixgraphine
 $ ixgraphine-run
 ```
 
-
+To run from raw
+```sh
+$ ./node_modules/.bin/electron .
+$ python3 python3 web_app/run_app.py 
+```
 ### Plugins
 
 Future support intended...
