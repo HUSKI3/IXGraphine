@@ -15,7 +15,7 @@
 
 ### Installation
 
-Dillinger requires [Spark](https://github.com/HUSKI3/Spark/) to run.
+IXGrapine requires [Spark](https://github.com/HUSKI3/Spark/) to run.
 
 Install the package and run it!
 
@@ -38,7 +38,7 @@ Future support intended...
 
 Want to contribute? Great!
 
-IXGraphine is licneced under Apache 2, all contributions are welcome!
+IXGraphine is licenced under Apache 2, all contributions are welcome!
 
 #### Building from source
 
