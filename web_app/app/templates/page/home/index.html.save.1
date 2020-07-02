@@ -9,24 +9,28 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 {% block title %}Home{% endblock %}
 {% block body %}
 <header class="w3-display-container w3-content w3-center" style="max-width:1500px">
-  <img class="w3-image" src="https://www.w3schools.com/w3images/ocean.jpg" alt="Me" width="1500" height="400">
+  <img class="w3-image" src="/w3images/photographer.jpg" alt="Me" width="1500" height="600">
   <div class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-grey w3-center">
-    <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">APP</h1>
-    <h5 class="w3-hide-large" style="white-space:nowrap">APP</h5>
-    <h3 class="w3-hide-medium w3-hide-small">PLACE HOLDER</h3>
+    <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">JANE DOE</h1>
+    <h5 class="w3-hide-large" style="white-space:nowrap">JANE DOE</h5>
+    <h3 class="w3-hide-medium w3-hide-small">PHOTOGRAPHER</h3>
   </div>
- </div>
+  
+  <!-- Navbar (placed at the bottom of the header image) -->
+  <div class="w3-bar w3-light-grey w3-round w3-display-bottommiddle w3-hide-small" style="bottom:-16px">
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#portfolio" class="w3-bar-item w3-button">Portfolio</a>
+    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+  </div>
 </header>
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
-    {% for f in range(col) %}
     <div class="w3-third w3-container w3-margin-bottom">
       <div class="w3-container w3-white">
-        <p><b>{{ crypto[f] | safe}}</b></p>
-        <p></p>
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       </div>
     </div>
-   {% endfor %}
     <div class="w3-third w3-container w3-margin-bottom">
        <div class="w3-container w3-white">
         <p><b>Lorem Ipsum</b></p>
@@ -36,9 +40,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <div class="w3-third w3-container">
      <div class="w3-container w3-white">
         <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      </div>
-    </div>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue g
   </div>
   
   <!-- Second Photo Grid-->
