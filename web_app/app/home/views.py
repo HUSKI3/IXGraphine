@@ -39,7 +39,7 @@ def appinstall(tag,appid):
     print("Indexing...")
     index = crypto.index(str(appid))
     print("Got index: ",index)
-    return render_template('page/home/index.html',crypto=crypto,col=col, title="Home Page")
+    return render_template('page/apps/app_page.html',index=index, title=str(appid))
 
 @home.route('/dashboard')
 def dashboard():
