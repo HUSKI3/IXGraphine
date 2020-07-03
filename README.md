@@ -1,4 +1,4 @@
-# IXGraphine - version 0.20 
+# IXGraphine - version 0.24 
 ----
 
 [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/HUSKI3/IXGraphine/issues)

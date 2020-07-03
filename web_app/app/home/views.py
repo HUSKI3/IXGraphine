@@ -9,7 +9,7 @@ def homepage():
     Render the homepage template on the / route
     """
     #os.system('apt-cache search crypto')
-    tag = crypto
+    tag = 'crypto'
     out = subprocess.Popen(['apt-cache', 'search', 'crypto'], 
            stdout=subprocess.PIPE, 
            stderr=subprocess.STDOUT)
@@ -18,9 +18,9 @@ def homepage():
     col=len(str(stdout).replace('\\n', '\n').split(str("\n")))
     print(col)
     crypto=str(stdout).replace('\\n', '\n').split(str("\n"))
-    return render_template('page/home/index.html',crypto=crypto,col=col, title="Home Page")
+    return render_template('page/home/index.html',tag=tag,crypto=crypto,col=col, title="Home Page")
 
-@home.route('/appinstall/<tag>/<appid>')
+@home.route('appinstall/<tag>/<appid>')
 def appinstall(tag,appid):
     """
     Render the app page for the appid which isnt an id but an index of the list because im dumb but yeah
