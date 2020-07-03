@@ -19,7 +19,8 @@
   <h3 class="w3-opacity">{{appid.split(" ")[0] | safe}}</h3>
   <h4><i class="fa fa-clock-o"></i>{{version[1] | safe}}</h4>
   <h4><i class="fa fa-clock-o"></i>{{version[2] | safe}}</h4>
-  <a class="w3-button w3-light-grey" href="#">Download<i class="w3-margin-left fa fa-mail-reply"></i></a>
+  <h4><i class="fa fa-clock-o"></i>When-{{size[0] | safe}}</h4>
+  <a class="w3-button w3-light-grey" href="/install/{{tag|safe}}/{{appid.split(" ")[0]|safe}}">Download<i class="w3-margin-left fa fa-mail-reply"></i></a>
   <a class="w3-button w3-light-grey" href="#">Share<i class="w3-margin-left fa fa-arrow-right"></i></a>
   <hr>
   <p>{{data|safe}}</p>

@@ -1,6 +1,8 @@
 # IXGraphine - version 0.24 
 <img src="Logo.png">
+
 ---
+
 [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/HUSKI3/IXGraphine/issues)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
@@ -20,13 +22,12 @@ Install the package and run it!
 
 ```sh
 $ spark install ixgraphine
-$ ixgraphine-run
+$ ixgraphine
 ```
 
 To run from raw
 ```sh
-$ ./node_modules/.bin/electron .
-$ python3 python3 web_app/run_app.py 
+$ chmod +x ixgraphine && ./ixgraphine 
 ```
 ### Plugins
 
