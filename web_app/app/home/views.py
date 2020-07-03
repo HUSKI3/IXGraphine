@@ -37,7 +37,8 @@ def appinstall(tag,appid):
     This is hella inffectient and may break if a new application with the tag was added, update this upon v0.30
     """
     print("Indexing...")
-    index = crypto.index(str(appid))
+    appname = [s for s in crypto if str(appid.split(" ")[0]) in s]
+    index = crypto.index(str(appname[0]))
     print("Got index: ",index)
     print("Building version data...")
     out = subprocess.Popen(['apt-cache','policy', str(appid.split(" ")[0])], 
