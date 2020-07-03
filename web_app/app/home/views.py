@@ -39,7 +39,24 @@ def appinstall(tag,appid):
     print("Indexing...")
     index = crypto.index(str(appid))
     print("Got index: ",index)
-    return render_template('page/apps/app_page.html',index=index, title=str(appid))
+    print("Building version data...")
+    out = subprocess.Popen(['apt-cache','policy', str(appid.split(" ")[0])], 
+           stdout=subprocess.PIPE, 
+           stderr=subprocess.STDOUT)
+    stdout,stderr = out.communicate()
+    data=str(stdout).replace('\\n', '\n').split(str("\n"))
+    print(data)
+    version = data
+    cmd = str('apt show -a '+appid.split(" ")[0])
+    out = subprocess.Popen(cmd.split(" "), 
+           stdout=subprocess.PIPE, 
+           stderr=subprocess.STDOUT)
+    stdout,stderr = out.communicate()
+    data=str(stdout).replace('\\n', '\n').split(str("\n"))
+    print(data)
+    data.pop(0)
+    data = [s for s in data if "Description:" in s]
+    return render_template('page/apps/app_page.html',data=data[0],version=version,appid=appid,index=index, title=str(appid))
 
 @home.route('/dashboard')
 def dashboard():
