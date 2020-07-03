@@ -10,7 +10,7 @@
 > IXGrapine is a sleek, fast and powerfull application store built for IXOS.
 
 # New Features!
-
+<img src="thingy.png">
   - Epic Flask backbone
   - Chromium powered interface 
 
