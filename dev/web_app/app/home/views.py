@@ -1,7 +1,8 @@
-from flask import render_template
+from flask import render_template, session, request
 from . import home
 import os
 import subprocess
+from wtforms import Form, StringField, SelectField
 
 @home.route('/')
 def homepage():
@@ -14,10 +15,22 @@ def homepage():
            stdout=subprocess.PIPE, 
            stderr=subprocess.STDOUT)
     stdout,stderr = out.communicate()
-    print(stdout)
+    #print(stdout)
     col=len(str(stdout).replace('\\n', '\n').split(str("\n")))
-    print(col)
+    #print(col)
     crypto=str(stdout).replace('\\n', '\n').split(str("\n"))
+    if request.method == "POST":
+        searchitem = request.form["appname"]
+        session['appname'] = searchitem
+        out = subprocess.Popen(['apt-cache', 'search', 'crypto'], 
+           stdout=subprocess.PIPE, 
+           stderr=subprocess.STDOUT)
+        stdout,stderr = out.communicate()
+        #print(stdout)
+        col=len(str(stdout).replace('\\n', '\n').split(str("\n")))
+        #print(col)
+        crypto=str(stdout).replace('\\n', '\n').split(str("\n"))
+        return render_template('page/home/index.html',tag=tag,crypto=crypto,col=col, title="Search Results")
     return render_template('page/home/index.html',tag=tag,crypto=crypto,col=col, title="Home Page")
 
 @home.route('install/<tag>/<appid>')
@@ -50,7 +63,7 @@ def install(tag,appid):
            stderr=subprocess.STDOUT)
     stdout,stderr = out.communicate()
     data=str(stdout).replace('\\n', '\n').split(str("\n"))
-    print(data)
+    #print(data)
     version = data
     cmd = str('apt show -a '+appid.split(" ")[0])
     out = subprocess.Popen(cmd.split(" "), 
@@ -58,7 +71,7 @@ def install(tag,appid):
            stderr=subprocess.STDOUT)
     stdout,stderr = out.communicate()
     data=str(stdout).replace('\\n', '\n').split(str("\n"))
-    print(data)
+    #print(data)
     data.pop(0)
     sdata = data
     data = [s for s in data if "Description:" in s]
@@ -91,7 +104,7 @@ def appinstall(tag,appid):
            stderr=subprocess.STDOUT)
     stdout,stderr = out.communicate()
     data=str(stdout).replace('\\n', '\n').split(str("\n"))
-    print(data)
+    #print(data)
     version = data
     cmd = str('apt show -a '+appid.split(" ")[0])
     out = subprocess.Popen(cmd.split(" "), 
@@ -99,7 +112,7 @@ def appinstall(tag,appid):
            stderr=subprocess.STDOUT)
     stdout,stderr = out.communicate()
     data=str(stdout).replace('\\n', '\n').split(str("\n"))
-    print(data)
+    #print(data)
     data.pop(0)
     sdata = data
     data = [s for s in data if "Description:" in s]
