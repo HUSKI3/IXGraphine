@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=IXGraphite
+Version=v0.30
+Icon=no icon
+X-Icon-Path=/home/
+Exec=python /etc/IXGraphite/launch.sh
+Terminal=false
+Type=Application
