@@ -2,7 +2,7 @@
 Name=IXGraphite
 Version=v0.30
 Icon=no icon
-X-Icon-Path=/home/
-Exec=python /etc/IXGraphite/launch.sh
+X-Icon-Path=/etc/IXGraphite/Logo.png
+Exec=./etc/IXGraphite/ixgraphite
 Terminal=false
 Type=Application
