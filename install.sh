@@ -3,8 +3,8 @@ echo "Installing IXGraphine"
 #cd dev 
 #pip3 install -r requirements.txt &&
 #npm install . 
-mkdir /etc/IXGraphite
-cp -P dev /etc/IXGraphite
+sudo mkdir /etc/IXGraphite
+sudo cp -Pr dev /etc/IXGraphite
 echo "Creating shortcut"
-chmod u+x /etc/IXGraphite/IXGrapite.desktop
-cp -P dev/IXGraphite.desktop ~/Desktop
+sudo chmod u+x /etc/IXGraphite/IXGrapite.desktop
+sudo cp -Pr dev/IXGraphite.desktop ~/Desktop

@@ -82,7 +82,7 @@ const createMainWindow = () => {
   });
 
   // Load the index page
-  mainWindow.loadURL("http://localhost:4040/");
+  mainWindow.loadURL("http://localhost:2000/");
 
   // Open the DevTools.
   //mainWindow.webContents.openDevTools();
